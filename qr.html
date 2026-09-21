@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ansora – Đang chuyển trang…</title>
+  <meta name="robots" content="noindex, follow">
+
+  <!--
+    Trang chuyển hướng cho mã QR in trên bao bì: https://ansora.com.vn/qr
+    QR đã in thì không sửa được, nên chỉ cần đổi địa chỉ đích ở 3 chỗ bên dưới
+    (meta refresh, canonical, biến TARGET) khi muốn dẫn khách sang trang khác.
+    UTM để phía trang đích nhận biết lượt vào từ bao bì.
+  -->
+  <link rel="canonical" href="https://ansora.com.vn/">
+  <meta http-equiv="refresh" content="0; url=https://ansora.com.vn/?utm_source=qr&utm_medium=packaging&utm_campaign=bao-bi">
+  <script>
+    var TARGET = "https://ansora.com.vn/?utm_source=qr&utm_medium=packaging&utm_campaign=bao-bi";
+    window.location.replace(TARGET);
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; background: #FFF9EE; color: #4E342E; text-align: center; padding: 3rem 1rem; font-size: 20px; }
+    a { color: #D98A1A; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <p>Đang chuyển đến trang Ansora…</p>
+  <p><a href="https://ansora.com.vn/?utm_source=qr&utm_medium=packaging&utm_campaign=bao-bi">Bấm vào đây nếu trang không tự chuyển</a></p>
+</body>
+</html>
