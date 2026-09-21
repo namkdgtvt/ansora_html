@@ -1,0 +1,10 @@
+# robots.txt cho https://ansora.com.vn
+# TẠM THỜI chặn toàn bộ bot trong lúc website đang chỉnh sửa.
+# KHI RA MẮT CHÍNH THỨC: xóa dòng "Disallow: /" và mở lại phần bên dưới.
+User-agent: *
+Disallow: /
+
+# --- Bật lại khi ra mắt ---
+# User-agent: *
+# Allow: /
+# Sitemap: https://ansora.com.vn/sitemap.xml
