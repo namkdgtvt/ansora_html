@@ -3,340 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ansora – Bột ngũ cốc dinh dưỡng cho cả nhà</title>
-  <meta name="description" content="Bột ngũ cốc dinh dưỡng Ansora từ 12 loại hạt hữu cơ, không đường tinh luyện, phù hợp cho trẻ từ 8 tuổi và người lớn.">
+  <title>ansora – Bữa ăn tinh bột kháng tự nhiên</title>
+  <meta name="description" content="Bữa ăn tinh bột kháng tự nhiên của ansora: thức uống bột hoà tan từ chuối xanh, đậu gà, muối hồng và nano curcumin. Chỉ cần nước nóng, khuấy đều là dùng ngay.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/ansora-logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== Bảng màu organic, sáng ===== */
     :root {
-      --cream: #FFF9EE;        /* nền chính, màu kem sáng */
-      --cream-2: #FFF1D6;      /* nền phụ */
-      --oat: #F5D8A2;          /* yến mạch */
-      --honey: #F2A93B;        /* mật ong – màu nhấn chính */
-      --honey-dark: #D98A1A;
-      --leaf: #7CB342;         /* lá xanh – hữu cơ */
-      --leaf-dark: #558B2F;
-      --leaf-light: #E8F5D9;
-      --terracotta: #E07A5F;   /* đất nung – điểm nhấn */
-      --cocoa: #4E342E;        /* chữ chính, nâu ca cao */
-      --cocoa-soft: #6D4C41;   /* chữ phụ */
-      --white: #FFFFFF;
-      --radius: 28px;
-      --shadow: 0 12px 40px rgba(78, 52, 46, 0.10);
+      --green-900:#1F5C3E; --green-700:#2C7350; --green-600:#3A8763;
+      --green-100:#E7F3EC; --green-50:#F5FAF7;
+      --gold-500:#F2A93B; --gold-600:#DB8B1F; --gold-100:#FDECC9;
+      --cream:#FBF7EE; --cream-2:#F1E9D8;
+      --ink:#24302A; --ink-soft:#57655D;
+      --white:#FFFFFF;
+      --radius:28px; --radius-sm:18px;
+      --shadow:0 14px 40px rgba(31,92,62,0.12);
+      --shadow-sm:0 8px 20px rgba(31,92,62,0.10);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
-    /* ===== Cỡ chữ to ===== */
     body {
-      font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-      font-size: 20px;
+      font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+      font-size: 18px;
       line-height: 1.65;
-      color: var(--cocoa);
+      color: var(--ink);
       background: var(--cream);
     }
-    h1, h2, h3 { line-height: 1.15; font-weight: 900; }
-    h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
-    h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
-    h3 { font-size: 1.5rem; }
-    p  { font-size: 1.15rem; }
+    h1, h2, h3 { font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; line-height: 1.15; color: var(--green-900); letter-spacing: -.01em; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    h3 { font-size: 1.35rem; }
+    p  { font-size: 1.05rem; }
     a  { color: inherit; text-decoration: none; }
+    a:hover { color: var(--green-700); }
     img { max-width: 100%; display: block; }
 
     .container { width: min(1180px, 92%); margin: 0 auto; }
     section { padding: 96px 0; }
     .eyebrow {
-      display: inline-block;
-      background: var(--leaf-light);
-      color: var(--leaf-dark);
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      padding: 8px 18px;
-      border-radius: 999px;
-      margin-bottom: 18px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-100); color: var(--green-700);
+      font-weight: 800; font-size: .86rem; letter-spacing: .04em; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 999px; margin-bottom: 18px;
     }
     .center { text-align: center; }
-    .lead { font-size: 1.35rem; color: var(--cocoa-soft); max-width: 760px; margin: 18px auto 0; }
+    .lead { font-size: 1.15rem; color: var(--ink-soft); max-width: 700px; }
+    .center .lead { margin: 16px auto 0; }
 
     /* ===== Nút ===== */
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
-      font-weight: 800; font-size: 1.15rem;
-      padding: 18px 34px; border-radius: 999px;
+      font-weight: 800; font-size: 1.02rem;
+      padding: 16px 30px; border-radius: 999px;
       transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-      cursor: pointer; border: 0;
+      cursor: pointer; border: 0; font-family: inherit;
     }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
     .btn:hover { transform: translateY(-3px); }
-    .btn-primary { background: var(--honey); color: var(--cocoa); box-shadow: 0 10px 24px rgba(242,169,59,.35); }
-    .btn-primary:hover { background: var(--honey-dark); color: var(--white); }
-    .btn-outline { background: transparent; border: 3px solid var(--leaf); color: var(--leaf-dark); }
-    .btn-outline:hover { background: var(--leaf); color: var(--white); }
+    .btn-primary { background: var(--green-900); color: var(--white); box-shadow: 0 10px 24px rgba(31,92,62,.28); }
+    .btn-primary:hover { background: var(--green-700); color: var(--white); }
+    .btn-outline { background: transparent; border: 2px solid var(--green-700); color: var(--green-700); }
+    .btn-outline:hover { background: var(--green-700); color: var(--white); }
 
     /* ===== Header ===== */
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 249, 238, .92);
+      background: rgba(251, 247, 238, .92);
       backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--oat);
+      border-bottom: 1px solid var(--cream-2);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 84px; position: relative; }
-    .logo { display: flex; align-items: center; gap: 12px; font-size: 1.8rem; font-weight: 900; color: var(--leaf-dark); }
-    .logo span.dot { width: 44px; height: 44px; border-radius: 50%; background: var(--honey); display: grid; place-items: center; font-size: 1.4rem; }
-    .nav ul { display: flex; gap: 34px; list-style: none; font-weight: 800; font-size: 1.1rem; }
-    .nav ul a:hover { color: var(--honey-dark); }
-    .nav .btn { padding: 12px 24px; font-size: 1.05rem; }
-    .menu-toggle { display: none; background: none; border: 0; font-size: 2rem; cursor: pointer; color: var(--cocoa); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 116px; gap: 24px; position: relative; }
+    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-logo img { height: 92px; width: auto; }
+    .nav ul { display: flex; gap: 30px; list-style: none; font-weight: 800; font-size: 1.02rem; }
+    .nav ul a { padding: 6px 0; border-bottom: 2px solid transparent; }
+    .nav ul a:hover { color: var(--green-900); border-color: var(--gold-500); }
+    .nav-call { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--green-900); white-space: nowrap; flex-shrink: 0; }
+    .nav-call .ico { width: 40px; height: 40px; border-radius: 50%; background: var(--green-100); color: var(--green-700); display: grid; place-items: center; flex-shrink: 0; }
+    .nav-call .ico svg { width: 18px; height: 18px; }
+    .nav-call small { display: block; font-size: .74rem; font-weight: 700; color: var(--ink-soft); }
+    .nav-call b { font-size: 1.05rem; }
+    .menu-toggle { display: none; background: none; border: 0; font-size: 2rem; cursor: pointer; color: var(--ink); }
 
     /* ===== Hero ===== */
     .hero {
       padding: 72px 0 96px;
       background:
-        radial-gradient(circle at 85% 15%, var(--cream-2) 0, transparent 40%),
-        radial-gradient(circle at 10% 90%, var(--leaf-light) 0, transparent 35%),
+        radial-gradient(circle at 88% 8%, var(--gold-100) 0, transparent 42%),
+        radial-gradient(circle at 6% 96%, var(--green-100) 0, transparent 38%),
         var(--cream);
       overflow: hidden;
     }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
-    .hero h1 em { font-style: normal; color: var(--leaf-dark); }
-    .hero h1 strong { color: var(--honey-dark); }
-    .hero .lead { margin: 24px 0 36px; text-align: left; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .hero h1 em { font-style: normal; color: var(--gold-600); }
+    .hero .lead { margin: 22px 0 34px; text-align: left; font-size: 1.2rem; max-width: 560px; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-badges { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+    .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--white); border: 2px solid var(--oat);
-      padding: 10px 18px; border-radius: 999px; font-weight: 800; font-size: 1rem;
+      background: var(--white); border: 1px solid var(--cream-2);
+      padding: 9px 16px; border-radius: 999px; font-weight: 700; font-size: .92rem; color: var(--green-700);
     }
+    .badge svg { width: 16px; height: 16px; color: var(--gold-600); flex-shrink: 0; }
 
-    /* Bao bì sản phẩm dựng bằng CSS */
-    .hero-visual { position: relative; display: grid; place-items: center; min-height: 520px; }
-    .blob {
+    .hero-visual { position: relative; display: grid; place-items: center; min-height: 480px; }
+    .hero-blob {
       position: absolute; inset: 0; margin: auto;
-      width: 90%; aspect-ratio: 1; border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%;
-      background: linear-gradient(135deg, var(--oat), var(--honey));
-      opacity: .55; animation: float 9s ease-in-out infinite;
+      width: 88%; aspect-ratio: 1; border-radius: 44% 56% 52% 48% / 54% 42% 58% 46%;
+      background: linear-gradient(135deg, var(--gold-100), var(--green-100));
+      opacity: .9;
     }
-    @keyframes float {
-      0%,100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(4deg); }
+    .hero-photo {
+      position: relative; width: 100%; max-width: 440px; border-radius: 28px; overflow: hidden;
+      box-shadow: var(--shadow); border: 6px solid var(--white);
     }
-    .pack {
-      position: relative; width: 300px; height: 420px;
-      background: linear-gradient(180deg, #FFFDF7 0%, #FFF3DC 100%);
-      border-radius: 26px 26px 34px 34px;
-      box-shadow: var(--shadow), inset 0 0 0 6px var(--white);
-      border: 3px solid var(--oat);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 28px; gap: 10px;
-      transform: rotate(-4deg);
-    }
-    .pack::before {
-      content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 60%; height: 14px; background: var(--leaf); border-radius: 0 0 14px 14px;
-    }
-    .pack .pack-logo { font-size: 2.2rem; font-weight: 900; color: var(--leaf-dark); letter-spacing: 1px; }
-    .pack .pack-name { font-size: 1.15rem; font-weight: 800; color: var(--cocoa-soft); }
-    .pack .bowl { font-size: 6rem; line-height: 1; margin: 6px 0; }
-    .pack .pack-tag { background: var(--honey); color: var(--cocoa); font-weight: 900; padding: 6px 16px; border-radius: 999px; font-size: 1rem; }
-    .pack .pack-weight { font-size: .95rem; color: var(--cocoa-soft); font-weight: 700; }
     .float-chip {
-      position: absolute; background: var(--white); border-radius: 20px; padding: 14px 20px;
-      box-shadow: var(--shadow); font-weight: 800; font-size: 1.05rem; display: flex; gap: 10px; align-items: center;
+      position: absolute; background: var(--white); border-radius: 18px; padding: 13px 18px;
+      box-shadow: var(--shadow-sm); font-weight: 800; font-size: .96rem; display: flex; gap: 9px; align-items: center;
+      color: var(--green-900);
     }
-    .chip-1 { top: 8%; left: 0; animation: float 7s ease-in-out infinite; }
-    .chip-2 { bottom: 12%; right: 0; animation: float 8s ease-in-out infinite reverse; }
-    .chip-3 { top: 48%; right: -4%; animation: float 10s ease-in-out infinite; }
+    .float-chip svg { width: 18px; height: 18px; color: var(--gold-600); flex-shrink: 0; }
+    .chip-1 { top: 4%; left: -2%; }
+    .chip-2 { bottom: 6%; right: -2%; }
 
     /* ===== Thanh số liệu ===== */
-    .stats { background: var(--leaf); color: var(--white); padding: 40px 0; }
+    .stats { background: var(--green-900); color: var(--white); padding: 40px 0; }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-    .stat b { display: block; font-size: 2.6rem; font-weight: 900; line-height: 1.1; }
-    .stat span { font-size: 1.1rem; font-weight: 700; opacity: .95; }
+    .stat b { display: block; font-family: 'Manrope', sans-serif; font-size: 2.3rem; font-weight: 800; line-height: 1.1; color: var(--gold-500); }
+    .stat span { font-size: 1.02rem; font-weight: 600; opacity: .92; }
 
-    /* ===== Lợi ích ===== */
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
-    .card {
-      background: var(--white); border-radius: var(--radius); padding: 36px 32px;
-      box-shadow: var(--shadow); border: 2px solid transparent;
-      transition: transform .2s ease, border-color .2s ease;
+    /* ===== Giới thiệu / thương hiệu ===== */
+    .brand { background: var(--white); }
+    .brand-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: center; }
+    .brand-mark { position: relative; display: grid; place-items: center; padding: 24px; }
+    .brand-mark::before {
+      content: ""; position: absolute; inset: 0; margin: auto; width: 92%; aspect-ratio: 1;
+      background: radial-gradient(circle, var(--gold-100) 0%, transparent 70%);
+      opacity: .8;
     }
-    .card:hover { transform: translateY(-6px); border-color: var(--oat); }
-    .card .icon {
-      width: 76px; height: 76px; border-radius: 22px; display: grid; place-items: center;
-      font-size: 2.2rem; margin-bottom: 22px; background: var(--leaf-light);
-    }
-    .card:nth-child(2) .icon { background: var(--cream-2); }
-    .card:nth-child(3) .icon { background: #FBE3DC; }
-    .card:nth-child(5) .icon { background: #FBE3DC; }
-    .card:nth-child(6) .icon { background: var(--cream-2); }
-    .card h3 { margin-bottom: 12px; }
-    .card p { color: var(--cocoa-soft); font-size: 1.1rem; }
+    .brand-mark img { position: relative; width: 100%; max-width: 340px; }
+    .brand h2 { margin-bottom: 18px; }
+    .brand p { color: var(--ink-soft); font-size: 1.08rem; }
+    .brand p + p { margin-top: 14px; }
+    .brand strong { color: var(--green-900); }
 
     /* ===== Thành phần ===== */
-    .ingredients { background: var(--cream-2); }
-    .ing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .ing-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-    .ing-list li {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--white); padding: 16px 20px; border-radius: 18px; font-weight: 800; font-size: 1.1rem;
-      border: 2px solid var(--oat);
-    }
-    .ing-list li span.emo { font-size: 1.8rem; }
-    .ing-visual {
-      background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow);
-    }
-    .ing-visual h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-    .no-list { list-style: none; display: grid; gap: 14px; }
-    .no-list li { display: flex; align-items: center; gap: 14px; font-size: 1.15rem; font-weight: 700; color: var(--cocoa-soft); }
-    .no-list .x { width: 40px; height: 40px; border-radius: 50%; background: #FBE3DC; color: var(--terracotta); display: grid; place-items: center; font-weight: 900; font-size: 1.3rem; flex-shrink: 0; }
-    .cert {
-      margin-top: 28px; padding: 20px 22px; background: var(--leaf-light); border-radius: 18px;
-      font-weight: 800; color: var(--leaf-dark); font-size: 1.1rem;
-    }
+    .ingredients { background: var(--green-50); }
+    .ing-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: start; }
+    .ing-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .ing-item { background: var(--white); padding: 22px; border-radius: var(--radius-sm); border: 1px solid var(--cream-2); }
+    .ing-item .ico { width: 68px; height: 68px; border-radius: 16px; background: var(--cream); display: grid; place-items: center; margin-bottom: 14px; }
+    .ing-item .ico svg { width: 42px; height: 42px; }
+    .ing-item h3 { font-size: 1.12rem; margin-bottom: 6px; }
+    .ing-item p { font-size: .96rem; color: var(--ink-soft); }
 
-    /* ===== Dành cho ai ===== */
-    .ages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
-    .age {
-      border-radius: var(--radius); padding: 40px 32px; text-align: center; color: var(--cocoa);
-      box-shadow: var(--shadow);
-    }
-    .age:nth-child(1) { background: linear-gradient(160deg, #FFF3DC, #FFE1A8); }
-    .age:nth-child(2) { background: linear-gradient(160deg, #E8F5D9, #C9E8A6); }
-    .age:nth-child(3) { background: linear-gradient(160deg, #FBE3DC, #F7C7B8); }
-    .age .emo { font-size: 4rem; line-height: 1; margin-bottom: 18px; }
-    .age h3 { margin-bottom: 8px; }
-    .age .range { display: inline-block; background: var(--white); padding: 6px 18px; border-radius: 999px; font-weight: 900; margin-bottom: 16px; }
-    .age p { color: var(--cocoa-soft); font-size: 1.08rem; }
+    .info-panel { background: var(--white); border-radius: var(--radius); padding: 38px; box-shadow: var(--shadow-sm); }
+    .info-panel h3 { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; margin-bottom: 20px; }
+    .info-panel h3 svg { width: 22px; height: 22px; color: var(--gold-600); }
+    .info-row { display: flex; gap: 14px; padding: 14px 0; border-top: 1px solid var(--cream-2); }
+    .info-row:first-of-type { border-top: 0; padding-top: 0; }
+    .info-row .ico { width: 34px; height: 34px; border-radius: 10px; background: var(--gold-100); color: var(--gold-600); display: grid; place-items: center; flex-shrink: 0; }
+    .info-row .ico svg { width: 17px; height: 17px; }
+    .info-row b { display: block; font-size: .98rem; color: var(--green-900); margin-bottom: 2px; }
+    .info-row span { font-size: .94rem; color: var(--ink-soft); }
 
     /* ===== Cách dùng ===== */
-    .howto { background: var(--cream-2); }
+    .howto { background: var(--white); }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
     .step { text-align: center; padding: 0 12px; }
     .step .num {
-      width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 22px;
-      background: var(--honey); color: var(--cocoa); display: grid; place-items: center;
-      font-size: 2.2rem; font-weight: 900; box-shadow: 0 10px 24px rgba(242,169,59,.35);
+      width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 22px;
+      background: var(--gold-500); color: var(--ink); display: grid; place-items: center;
+      font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; box-shadow: 0 10px 24px rgba(242,169,59,.32);
     }
     .step h3 { margin-bottom: 10px; }
-    .step p { color: var(--cocoa-soft); }
+    .step p { color: var(--ink-soft); }
 
     /* ===== Sản phẩm ===== */
-    .products { background: var(--leaf-light); }
-    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
-    .prod {
-      background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow);
-      display: flex; flex-direction: column; gap: 14px; position: relative;
+    .products { background: var(--green-50); }
+    .prod-single {
+      display: grid; grid-template-columns: .9fr 1.1fr;
+      background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-top: 56px;
     }
-    .prod .ribbon {
-      position: absolute; top: 20px; right: 20px; background: var(--terracotta); color: var(--white);
-      font-weight: 900; font-size: .95rem; padding: 6px 14px; border-radius: 999px;
-    }
-    .prod .thumb {
-      height: 200px; border-radius: 22px; display: grid; place-items: center; font-size: 5rem;
-    }
-    .prod:nth-child(1) .thumb { background: linear-gradient(160deg, #FFF3DC, #FFE1A8); }
-    .prod:nth-child(2) .thumb { background: linear-gradient(160deg, #F3E5D8, #D7B79C); }
-    .prod:nth-child(3) .thumb { background: linear-gradient(160deg, #E8F5D9, #C9E8A6); }
-    .prod h3 { font-size: 1.55rem; }
-    .prod .desc { color: var(--cocoa-soft); font-size: 1.05rem; flex: 1; }
-    .prod .price { display: flex; align-items: baseline; gap: 10px; }
-    .prod .price b { font-size: 1.9rem; color: var(--leaf-dark); }
-    .prod .price span { color: var(--cocoa-soft); font-weight: 700; }
-    .prod .btn { justify-content: center; }
+    .prod-single .photo { background: var(--cream-2); display: grid; place-items: center; padding: 28px; }
+    .prod-single .photo img { border-radius: 14px; }
+    .prod-body { padding: 48px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+    .prod-tag { display: inline-flex; background: var(--green-100); color: var(--green-700); font-weight: 800; font-size: .82rem; padding: 6px 14px; border-radius: 999px; width: fit-content; }
+    .prod-body h3 { font-size: 1.8rem; }
+    .prod-body .desc { color: var(--ink-soft); font-size: 1.06rem; }
+    .prod-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 6px 0; }
+    .prod-specs div { background: var(--cream); border-radius: 12px; padding: 12px 16px; }
+    .prod-specs b { display: block; font-size: .94rem; color: var(--green-900); }
+    .prod-specs span { font-size: .86rem; color: var(--ink-soft); }
+    .prod-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
 
     /* ===== Bảng dinh dưỡng ===== */
-    .nutri-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-    .nutri-grid .lead { margin-left: 0; }
-    table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); font-size: 1.1rem; }
-    th, td { padding: 16px 22px; text-align: left; }
-    thead th { background: var(--leaf); color: var(--white); font-weight: 900; font-size: 1.15rem; }
-    tbody tr:nth-child(even) { background: var(--cream); }
-    td:last-child, th:last-child { text-align: right; font-weight: 800; }
-    .note { font-size: 1rem; color: var(--cocoa-soft); margin-top: 14px; }
+    .nutri { background: var(--white); }
+    .nutri-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 56px; align-items: center; }
+    .nutri-card { background: var(--gold-100); border-radius: var(--radius); padding: 44px; box-shadow: var(--shadow-sm); }
+    .nutri-card .ico { width: 60px; height: 60px; border-radius: 16px; background: var(--white); color: var(--gold-600); display: grid; place-items: center; margin-bottom: 20px; }
+    .nutri-card .ico svg { width: 30px; height: 30px; }
+    .nutri-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .nutri-card p { color: var(--ink-soft); font-size: 1.02rem; }
+    .nutri-list { display: grid; gap: 12px; margin-top: 24px; list-style: none; }
+    .nutri-list li { display: flex; gap: 10px; align-items: flex-start; font-size: .98rem; color: var(--ink-soft); }
+    .nutri-list svg { width: 18px; height: 18px; color: var(--green-700); flex-shrink: 0; margin-top: 2px; }
 
-    /* ===== Đánh giá ===== */
-    .reviews { background: var(--cream-2); }
-    .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
-    .rev { background: var(--white); border-radius: var(--radius); padding: 34px 30px; box-shadow: var(--shadow); }
-    .rev .stars { color: var(--honey); font-size: 1.4rem; letter-spacing: 3px; margin-bottom: 14px; }
-    .rev p { font-size: 1.12rem; color: var(--cocoa-soft); margin-bottom: 22px; }
-    .rev .who { display: flex; align-items: center; gap: 14px; font-weight: 800; }
-    .rev .who .av { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; background: var(--leaf-light); }
-    .rev .who small { display: block; font-weight: 700; color: var(--cocoa-soft); font-size: .95rem; }
+    /* ===== Cam kết ===== */
+    .trust { background: var(--green-900); color: var(--white); }
+    .trust h2 { color: var(--white); }
+    .trust .lead { color: rgba(255,255,255,.8); }
+    .trust .eyebrow { background: rgba(255,255,255,.12); color: var(--gold-500); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 52px; }
+    .trust-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm); padding: 28px 24px; }
+    .trust-card .ico { width: 48px; height: 48px; border-radius: 12px; background: var(--gold-500); color: var(--ink); display: grid; place-items: center; margin-bottom: 16px; }
+    .trust-card .ico svg { width: 24px; height: 24px; }
+    .trust-card h3 { color: var(--white); font-size: 1.08rem; margin-bottom: 6px; }
+    .trust-card p { font-size: .92rem; color: rgba(255,255,255,.75); }
 
     /* ===== FAQ ===== */
-    .faq { max-width: 860px; margin: 48px auto 0; display: grid; gap: 16px; }
+    .faq { max-width: 860px; margin: 52px auto 0; display: grid; gap: 16px; }
     details {
-      background: var(--white); border-radius: 22px; padding: 22px 28px; box-shadow: var(--shadow);
-      border: 2px solid transparent;
+      background: var(--white); border-radius: 22px; padding: 22px 28px;
+      border: 1px solid var(--cream-2);
     }
-    details[open] { border-color: var(--oat); }
+    details[open] { border-color: var(--gold-500); }
     summary {
-      cursor: pointer; font-weight: 800; font-size: 1.25rem; list-style: none;
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      cursor: pointer; font-weight: 800; font-size: 1.2rem; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--green-900);
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; font-size: 2rem; color: var(--honey-dark); font-weight: 900; line-height: 1; }
-    details[open] summary::after { content: "–"; }
-    details p { margin-top: 14px; color: var(--cocoa-soft); }
+    .plus { width: 28px; height: 28px; border-radius: 50%; background: var(--green-100); color: var(--green-700); display: grid; place-items: center; flex-shrink: 0; font-size: 1.3rem; font-weight: 900; line-height: 1; }
+    details[open] .plus { background: var(--gold-500); color: var(--ink); }
+    details p { margin-top: 14px; color: var(--ink-soft); }
 
-    /* ===== CTA ===== */
+    /* ===== CTA liên hệ ===== */
     .cta-section { padding-top: 0; }
     .cta {
-      background: linear-gradient(135deg, var(--honey) 0%, #F7C05F 100%);
-      border-radius: 40px; padding: 72px 48px; text-align: center; color: var(--cocoa);
+      background: linear-gradient(135deg, var(--gold-500) 0%, #F7C05F 100%);
+      border-radius: 40px; padding: 72px 48px; text-align: center; color: var(--ink);
       box-shadow: var(--shadow);
     }
-    .cta h2 { margin-bottom: 14px; }
-    .cta p { font-size: 1.3rem; margin-bottom: 32px; }
-    .cta .btn-primary { background: var(--cocoa); color: var(--white); box-shadow: none; }
-    .cta .btn-primary:hover { background: var(--leaf-dark); }
-    .cta form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
-    .cta input {
-      font: inherit; font-size: 1.15rem; padding: 16px 24px; border-radius: 999px; border: 3px solid var(--white);
-      min-width: 320px; outline: none;
-    }
-    .cta input:focus { border-color: var(--leaf-dark); }
+    .cta h2 { margin-bottom: 14px; color: var(--ink); }
+    .cta p.lead { margin: 0 auto 34px; color: rgba(36,48,42,.75); }
+    .contact-row { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+    .contact-pill { display: flex; align-items: center; gap: 14px; background: var(--white); border-radius: 999px; padding: 12px 26px 12px 14px; box-shadow: var(--shadow-sm); transition: transform .15s ease; }
+    .contact-pill:hover { transform: translateY(-3px); }
+    .contact-pill .ico { width: 52px; height: 52px; border-radius: 50%; background: var(--green-900); color: var(--white); display: grid; place-items: center; flex-shrink: 0; }
+    .contact-pill .ico svg { width: 24px; height: 24px; }
+    .contact-pill .txt { text-align: left; }
+    .contact-pill .txt small { display: block; font-size: .8rem; font-weight: 700; color: var(--ink-soft); }
+    .contact-pill .txt b { font-size: 1.15rem; color: var(--green-900); }
+    .contact-pill.zalo .ico { background: #0068FF; }
 
     /* ===== Footer ===== */
-    footer { background: var(--cocoa); color: #F3E9DF; padding: 64px 0 28px; margin-top: 96px; }
-    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
-    footer .logo { color: var(--oat); margin-bottom: 14px; }
-    footer p, footer li { font-size: 1.05rem; color: #E0D2C2; }
-    footer h4 { font-size: 1.2rem; margin-bottom: 14px; color: var(--white); }
+    footer { background: var(--cream-2); color: var(--ink); padding: 64px 0 28px; margin-top: 0; border-top: 1px solid rgba(31,92,62,.1); }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
+    .foot-logo { text-align: center; }
+    .foot-logo img { height: 144px; width: auto; margin: 0 auto 12px; }
+    footer p, footer li { font-size: 1.02rem; color: var(--ink-soft); }
+    footer h4 { font-family: 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 800; margin-bottom: 14px; color: var(--green-900); }
     footer ul { list-style: none; display: grid; gap: 10px; }
-    footer a:hover { color: var(--honey); }
-    .copy { border-top: 1px solid rgba(255,255,255,.15); margin-top: 48px; padding-top: 22px; text-align: center; font-size: 1rem; color: #C9B8A6; }
+    footer a:hover { color: var(--gold-600); }
+    .foot-row { display: flex; gap: 10px; align-items: flex-start; }
+    .foot-row svg { width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0; color: var(--green-700); }
+    .copy { border-top: 1px solid rgba(31,92,62,.14); margin-top: 48px; padding-top: 22px; text-align: center; font-size: .95rem; color: var(--ink-soft); }
 
     /* ===== Responsive ===== */
     @media (max-width: 1000px) {
-      .cards, .rev-grid, .prod-grid, .ages, .steps { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
     }
     @media (max-width: 800px) {
       section { padding: 72px 0; }
       .nav ul { display: none; }
-      .nav .btn { display: none; }
+      .nav-call b { display: none; }
       .menu-toggle { display: block; }
       .nav.open ul {
-        display: grid; position: absolute; top: 84px; left: -4.5vw; right: -4.5vw;
-        background: var(--cream); padding: 24px 5%; gap: 18px; border-bottom: 2px solid var(--oat);
+        display: grid; position: absolute; top: 116px; left: -4.5vw; right: -4.5vw;
+        background: var(--cream); padding: 24px 5%; gap: 18px; border-bottom: 1px solid var(--cream-2);
       }
-      .hero-grid, .ing-grid, .nutri-grid { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 460px; order: -1; }
-      .pack { width: 250px; height: 350px; }
-      .cards, .rev-grid, .prod-grid, .ages, .steps { grid-template-columns: 1fr; }
-      .ing-list { grid-template-columns: 1fr; }
+      .hero-grid, .brand-grid, .ing-grid, .nutri-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 420px; order: -1; }
+      .prod-single { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
       .cta { padding: 56px 24px; }
-      .cta input { min-width: 0; width: 100%; }
       .foot-grid { grid-template-columns: 1fr; }
-      body { font-size: 18px; }
+      .nav-logo img { height: 48px; }
+      body { font-size: 16px; }
     }
   </style>
 </head>
@@ -345,15 +303,18 @@
   <!-- ===== HEADER ===== -->
   <header>
     <div class="container nav" id="nav">
-      <a class="logo" href="#top"><span class="dot">🌾</span>Ansora</a>
+      <a class="nav-logo" href="#top"><img src="assets/images/ansora-logo.svg" alt="ansora"></a>
       <ul>
-        <li><a href="#loi-ich">Lợi ích</a></li>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
         <li><a href="#thanh-phan">Thành phần</a></li>
-        <li><a href="#san-pham">Sản phẩm</a></li>
         <li><a href="#cach-dung">Cách dùng</a></li>
+        <li><a href="#san-pham">Sản phẩm</a></li>
         <li><a href="#faq">Hỏi đáp</a></li>
       </ul>
-      <a class="btn btn-primary" href="#dat-hang">Đặt hàng ngay</a>
+      <a class="nav-call" href="tel:0967868747">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span><small>Hotline tư vấn</small><b>0967 868 747</b></span>
+      </a>
       <button class="menu-toggle" aria-label="Mở menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     </div>
   </header>
@@ -362,32 +323,32 @@
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">🌱 100% hạt hữu cơ · Dành cho trẻ từ 8 tuổi & người lớn</span>
-        <h1>Bữa sáng <em>lành mạnh</em>,<br>năng lượng <strong>tràn đầy</strong></h1>
-        <p class="lead">Bột ngũ cốc dinh dưỡng Ansora kết hợp 12 loại hạt và đậu hữu cơ, rang chậm và nghiền mịn. Không đường tinh luyện, không chất bảo quản. Chỉ cần 2 phút pha là có ngay ly ngũ cốc thơm ngon cho cả nhà.</p>
+        <span class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          Made with Resistant Starch
+        </span>
+        <h1>Bữa ăn tinh bột<br>kháng <em>tự nhiên</em></h1>
+        <p class="lead">Thức uống bột hoà tan từ chuối xanh, đậu gà, muối hồng và nano curcumin. Chỉ cần cho bột vào cốc, rót nước nóng, khuấy đều là có ngay một bữa ăn nhẹ ấm nóng, tiện lợi cho cả gia đình.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#san-pham">🛒 Xem sản phẩm</a>
+          <a class="btn btn-primary" href="#lien-he">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Liên hệ đặt hàng
+          </a>
           <a class="btn btn-outline" href="#thanh-phan">Xem thành phần</a>
         </div>
         <div class="hero-badges">
-          <span class="badge">✅ Không đường tinh luyện</span>
-          <span class="badge">✅ Không chất bảo quản</span>
-          <span class="badge">✅ Giàu chất xơ & protein</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Xuất xứ Việt Nam</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Nguyên liệu thuần Việt</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pha nhanh 1 phút</span>
         </div>
       </div>
-
       <div class="hero-visual">
-        <div class="blob"></div>
-        <div class="pack">
-          <div class="pack-logo">ANSORA</div>
-          <div class="pack-name">Bột ngũ cốc dinh dưỡng</div>
-          <div class="bowl">🥣</div>
-          <div class="pack-tag">12 loại hạt hữu cơ</div>
-          <div class="pack-weight">Khối lượng tịnh: 500g</div>
+        <div class="hero-blob"></div>
+        <div class="hero-photo">
+          <img src="assets/images/natural-meal.jpg" alt="Hộp Bữa ăn tinh bột kháng tự nhiên ansora">
         </div>
-        <div class="float-chip chip-1">🌾 Yến mạch nguyên cám</div>
-        <div class="float-chip chip-2">🥜 Hạnh nhân & óc chó</div>
-        <div class="float-chip chip-3">⭐ 4.9/5</div>
+        <div class="float-chip chip-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a9 9 0 0 0-9 9c0 3.5 2 6 4 7.5V21h10v-2.5c2-1.5 4-4 4-7.5a9 9 0 0 0-9-9z"/></svg>Nước nóng 60–70°C</div>
+        <div class="float-chip chip-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3"/></svg>Hộp 10 gói x 20g</div>
       </div>
     </div>
   </section>
@@ -395,52 +356,25 @@
   <!-- ===== SỐ LIỆU ===== -->
   <div class="stats">
     <div class="container stats-grid">
-      <div class="stat"><b>12</b><span>loại hạt & đậu hữu cơ</span></div>
-      <div class="stat"><b>0g</b><span>đường tinh luyện</span></div>
-      <div class="stat"><b>8+</b><span>phù hợp từ 8 tuổi</span></div>
-      <div class="stat"><b>2 phút</b><span>pha là dùng ngay</span></div>
+      <div class="stat"><b>4</b><span>thành phần tự nhiên</span></div>
+      <div class="stat"><b>20g</b><span>mỗi gói tiện lợi</span></div>
+      <div class="stat"><b>6+</b><span>phù hợp từ 6 tuổi</span></div>
+      <div class="stat"><b>100%</b><span>nguyên liệu thuần Việt</span></div>
     </div>
   </div>
 
-  <!-- ===== LỢI ÍCH ===== -->
-  <section id="loi-ich">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Vì sao chọn Ansora</span>
-        <h2>Dinh dưỡng trọn vẹn trong mỗi ly</h2>
-        <p class="lead">Được nghiên cứu để đáp ứng nhu cầu năng lượng của trẻ đang lớn, học sinh, người đi làm và người cao tuổi.</p>
+  <!-- ===== GIỚI THIỆU / THƯƠNG HIỆU ===== -->
+  <section class="brand" id="gioi-thieu">
+    <div class="container brand-grid">
+      <div class="brand-mark">
+        <img src="assets/images/ansora-logo.svg" alt="Logo ansora">
       </div>
-      <div class="cards">
-        <div class="card">
-          <div class="icon">💪</div>
-          <h3>Giàu protein thực vật</h3>
-          <p>Đậu nành, đậu xanh, đậu đen và hạt điều cung cấp protein giúp phát triển cơ bắp và chiều cao cho trẻ.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🧠</div>
-          <h3>Tốt cho trí não</h3>
-          <p>Óc chó, hạnh nhân và hạt lanh chứa Omega-3 hỗ trợ tập trung, ghi nhớ trong giờ học và làm việc.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🌿</div>
-          <h3>Nhiều chất xơ, dễ tiêu</h3>
-          <p>Yến mạch nguyên cám và gạo lứt giúp hệ tiêu hoá khoẻ mạnh, no lâu và ổn định đường huyết.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🦴</div>
-          <h3>Bổ sung canxi & sắt</h3>
-          <p>Hạt mè đen và đậu nành giàu canxi, sắt tự nhiên cho xương chắc khoẻ, hạn chế thiếu máu.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🍯</div>
-          <h3>Vị ngọt tự nhiên</h3>
-          <p>Ngọt dịu từ chính hạt rang và một ít đường mía thô, không dùng đường tinh luyện hay hương liệu.</p>
-        </div>
-        <div class="card">
-          <div class="icon">⏱️</div>
-          <h3>Tiện lợi mỗi ngày</h3>
-          <p>Pha với nước ấm hoặc sữa là có ngay bữa sáng, bữa phụ. Mang theo đi học, đi làm cực gọn nhẹ.</p>
-        </div>
+      <div>
+        <span class="eyebrow">Về ansora</span>
+        <h2>Một bầu trời tương lai tốt lành</h2>
+        <p>Tên gọi <strong>“ansora”</strong> được ghép từ hai từ: <strong>“an”</strong> — mang ý nghĩa an lành, bình an, an lạc, tượng trưng cho những điều tốt đẹp; và <strong>“sora”</strong> — tiếng Nhật nghĩa là bầu trời.</p>
+        <p>Ghép lại, ansora mang ý nghĩa một bầu trời tương lai đầy đủ sự tốt lành mà chúng tôi hướng tới, cho cả sức khỏe, tinh thần và trí tuệ.</p>
+        <p>Sản phẩm đầu tiên của ansora — <strong>Bữa ăn tinh bột kháng tự nhiên</strong> — được sản xuất tại Việt Nam từ nguyên liệu thuần Việt.</p>
       </div>
     </div>
   </section>
@@ -450,63 +384,48 @@
     <div class="container ing-grid">
       <div>
         <span class="eyebrow">Thành phần</span>
-        <h2>12 loại hạt hữu cơ, rang chậm giữ trọn dưỡng chất</h2>
-        <p class="lead" style="margin-left:0">Nguyên liệu được chọn lọc từ nông trại đạt chuẩn hữu cơ, rang ở nhiệt độ thấp và nghiền mịn để dễ pha, dễ uống.</p>
-        <ul class="ing-list">
-          <li><span class="emo">🌾</span>Yến mạch nguyên cám</li>
-          <li><span class="emo">🍚</span>Gạo lứt đỏ</li>
-          <li><span class="emo">🫘</span>Đậu nành</li>
-          <li><span class="emo">🟢</span>Đậu xanh</li>
-          <li><span class="emo">⚫</span>Đậu đen xanh lòng</li>
-          <li><span class="emo">🔴</span>Đậu đỏ</li>
-          <li><span class="emo">🌰</span>Hạnh nhân</li>
-          <li><span class="emo">🥜</span>Óc chó</li>
-          <li><span class="emo">🌻</span>Hạt điều</li>
-          <li><span class="emo">⚪</span>Mè đen</li>
-          <li><span class="emo">🌱</span>Hạt lanh</li>
-          <li><span class="emo">🎃</span>Hạt bí xanh</li>
-        </ul>
-      </div>
-      <div class="ing-visual">
-        <h3>🚫 Cam kết KHÔNG có</h3>
-        <ul class="no-list">
-          <li><span class="x">✕</span>Đường tinh luyện, siro ngô</li>
-          <li><span class="x">✕</span>Chất bảo quản, chất tạo màu</li>
-          <li><span class="x">✕</span>Hương liệu tổng hợp</li>
-          <li><span class="x">✕</span>Chất béo chuyển hoá (trans fat)</li>
-          <li><span class="x">✕</span>Nguyên liệu biến đổi gen (GMO)</li>
-        </ul>
-        <div class="cert">🏅 Đạt chứng nhận an toàn thực phẩm & sản xuất theo tiêu chuẩn HACCP</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DÀNH CHO AI ===== -->
-  <section id="doi-tuong">
-    <div class="container">
-      <div class="center">
-        <span class="eyebrow">Dành cho ai</span>
-        <h2>Một sản phẩm, cả nhà cùng dùng</h2>
-        <p class="lead">Phù hợp với mọi thành viên từ 8 tuổi trở lên. Không khuyến nghị cho trẻ dưới 8 tuổi.</p>
-      </div>
-      <div class="ages">
-        <div class="age">
-          <div class="emo">🧒</div>
-          <h3>Trẻ em & học sinh</h3>
-          <span class="range">8 – 17 tuổi</span>
-          <p>Năng lượng cho buổi học dài, hỗ trợ phát triển chiều cao và trí não trong giai đoạn vàng.</p>
+        <h2>4 nguyên liệu tự nhiên, không cầu kỳ</h2>
+        <p class="lead" style="margin:0;">Công thức đơn giản, dễ nhận biết — mỗi gói bột đều được pha chế từ những nguyên liệu quen thuộc trong bữa ăn của người Việt.</p>
+        <div class="ing-list">
+          <div class="ing-item">
+            <div class="ico"><svg viewBox="0 0 64 64"><path d="M15,50 C9,36 12,22 24,13 C31,8 39,6 45,8 C46,11 43,14 38,16 C28,20 20,28 18,38 C17,43 18,47 21,50 C19,52 16,52 15,50 Z" fill="#5B9A46" stroke="#3F6E30" stroke-width="1.2" stroke-linejoin="round"/><path d="M22,15 C30,10 38,8 44,9" fill="none" stroke="#8CC36F" stroke-width="2.5" stroke-linecap="round" opacity=".8"/><ellipse cx="45.5" cy="8.5" rx="3.4" ry="2.6" fill="#7A5233" transform="rotate(35 45.5 8.5)"/></svg></div>
+            <h3>Bột chuối xanh</h3>
+            <p>Nguồn tinh bột kháng tự nhiên quen thuộc, được nghiền mịn từ chuối xanh.</p>
+          </div>
+          <div class="ing-item">
+            <div class="ico"><svg viewBox="0 0 64 64"><ellipse cx="24" cy="38" rx="11" ry="10" fill="#E3C088" stroke="#B8935A" stroke-width="1.5"/><path d="M22 29 q2 -4 5 -2" fill="none" stroke="#B8935A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="42" cy="30" rx="10" ry="9.5" fill="#EDCE9E" stroke="#B8935A" stroke-width="1.5"/><path d="M40.5 22 q1.8 -3.6 4.5 -1.8" fill="none" stroke="#B8935A" stroke-width="1.5" stroke-linecap="round"/><ellipse cx="38" cy="46" rx="9" ry="8.5" fill="#E3C088" stroke="#B8935A" stroke-width="1.5"/><path d="M36.5 39 q1.6 -3.2 4 -1.6" fill="none" stroke="#B8935A" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <h3>Đậu gà</h3>
+            <p>Loại đậu giàu đạm thực vật, thường dùng trong các bữa ăn lành mạnh.</p>
+          </div>
+          <div class="ing-item">
+            <div class="ico"><svg viewBox="0 0 64 64"><polygon points="32,8 46,20 42,40 32,56 22,40 18,20" fill="#EFB3AC" stroke="#D98C82" stroke-width="1.5" stroke-linejoin="round"/><polygon points="32,8 46,20 32,26 18,20" fill="#F6CAC4" stroke="#D98C82" stroke-width="1.5" stroke-linejoin="round"/><polygon points="32,26 46,20 42,40 32,56" fill="#E49F97" stroke="#D98C82" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+            <h3>Muối hồng</h3>
+            <p>Muối hồng Himalaya, dùng với lượng nhỏ để cân bằng hương vị.</p>
+          </div>
+          <div class="ing-item">
+            <div class="ico"><svg viewBox="0 0 64 64"><circle cx="30" cy="34" r="16" fill="#E5893A" stroke="#C06B22" stroke-width="1.5"/><circle cx="30" cy="34" r="10.5" fill="#F2A93B"/><circle cx="30" cy="34" r="5" fill="#F7C05F"/><circle cx="49" cy="16" r="2.2" fill="#DB8B1F"/><circle cx="55" cy="26" r="1.6" fill="#DB8B1F"/><circle cx="47" cy="27" r="1.3" fill="#DB8B1F"/></svg></div>
+            <h3>Nano curcumin</h3>
+            <p>Tinh chất nghệ dạng nano, cho màu sắc và hương vị đặc trưng.</p>
+          </div>
         </div>
-        <div class="age">
-          <div class="emo">🧑‍💼</div>
-          <h3>Người đi làm & vận động</h3>
-          <span class="range">18 – 59 tuổi</span>
-          <p>Bữa sáng nhanh gọn, no lâu, giữ tỉnh táo. Bổ sung protein sau tập luyện.</p>
+      </div>
+      <div class="info-panel">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/></svg>Thông tin cần biết</h3>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+          <div><b>Lưu ý dị ứng</b><span>Không dùng cho người dị ứng với bất kỳ thành phần nào của sản phẩm.</span></div>
         </div>
-        <div class="age">
-          <div class="emo">👵</div>
-          <h3>Người cao tuổi</h3>
-          <span class="range">60+ tuổi</span>
-          <p>Dễ tiêu hoá, ít đường, giàu canxi và chất xơ, tốt cho xương khớp và tim mạch.</p>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><b>Pha bằng nước nóng</b><span>Cần tránh xa tầm tay trẻ em trong lúc pha chế.</span></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/></svg></span>
+          <div><b>Bảo quản</b><span>Nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</span></div>
+        </div>
+        <div class="info-row">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+          <div><b>Xuất xứ</b><span>Sản xuất tại Việt Nam, nguyên liệu thuần Việt.</span></div>
         </div>
       </div>
     </div>
@@ -517,23 +436,24 @@
     <div class="container">
       <div class="center">
         <span class="eyebrow">Cách dùng</span>
-        <h2>Chỉ 3 bước, 2 phút là xong</h2>
+        <h2>Chỉ 3 bước, sẵn sàng thưởng thức</h2>
+        <p class="lead">Pha 1 gói (20g) với 150ml nước nóng 60–70°C, khuấy đều đến khi tan hoàn toàn.</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
-          <h3>Lấy 3 muỗng bột</h3>
-          <p>Khoảng 30g, tương đương 3 muỗng canh đầy, cho vào ly hoặc bình lắc.</p>
+          <h3>Cho bột vào cốc</h3>
+          <p>Cho 1 gói bột (tương đương 20g) vào cốc hoặc ly.</p>
         </div>
         <div class="step">
           <div class="num">2</div>
-          <h3>Thêm 200ml nước ấm</h3>
-          <p>Dùng nước ấm 60–70°C hoặc sữa tươi. Có thể thêm chuối, mật ong tuỳ thích.</p>
+          <h3>Rót nước nóng</h3>
+          <p>Thêm 150ml nước nóng ở nhiệt độ 60–70°C.</p>
         </div>
         <div class="step">
           <div class="num">3</div>
-          <h3>Khuấy đều & thưởng thức</h3>
-          <p>Khuấy 30 giây cho bột tan mịn. Dùng 1–2 lần mỗi ngày vào bữa sáng hoặc bữa phụ.</p>
+          <h3>Khuấy đều &amp; thưởng thức</h3>
+          <p>Khuấy đều đến khi bột tan hoàn toàn và thưởng thức khi còn ấm.</p>
         </div>
       </div>
     </div>
@@ -544,89 +464,81 @@
     <div class="container">
       <div class="center">
         <span class="eyebrow">Sản phẩm</span>
-        <h2>Chọn hương vị yêu thích</h2>
-        <p class="lead">Ba công thức, một tiêu chuẩn: hữu cơ, sạch và ngon.</p>
+        <h2>Bữa ăn tinh bột kháng tự nhiên</h2>
+        <p class="lead">Hiện tại ansora có một sản phẩm — được chăm chút từ công thức đến bao bì.</p>
       </div>
-      <div class="prod-grid">
-        <div class="prod">
-          <span class="ribbon">Bán chạy</span>
-          <div class="thumb">🥣</div>
-          <h3>Ansora Original</h3>
-          <p class="desc">Vị nguyên bản từ 12 loại hạt, ngọt dịu tự nhiên. Lựa chọn cho cả gia đình.</p>
-          <div class="price"><b>189.000₫</b><span>/ túi 500g</span></div>
-          <a class="btn btn-primary" href="#dat-hang">Đặt mua</a>
+      <div class="prod-single">
+        <div class="photo">
+          <img src="assets/images/natural-meal.jpg" alt="Bữa ăn tinh bột kháng tự nhiên ansora">
         </div>
-        <div class="prod">
-          <span class="ribbon">Trẻ em thích</span>
-          <div class="thumb">🍫</div>
-          <h3>Ansora Cacao</h3>
-          <p class="desc">Thêm bột cacao hữu cơ, thơm ngon dễ uống. Được các bé từ 8 tuổi yêu thích.</p>
-          <div class="price"><b>199.000₫</b><span>/ túi 500g</span></div>
-          <a class="btn btn-primary" href="#dat-hang">Đặt mua</a>
-        </div>
-        <div class="prod">
-          <span class="ribbon">Không đường</span>
-          <div class="thumb">🍃</div>
-          <h3>Ansora Zero</h3>
-          <p class="desc">Hoàn toàn không thêm đường, dành cho người ăn kiêng, tiểu đường và người cao tuổi.</p>
-          <div class="price"><b>209.000₫</b><span>/ túi 500g</span></div>
-          <a class="btn btn-primary" href="#dat-hang">Đặt mua</a>
+        <div class="prod-body">
+          <span class="prod-tag">Sản phẩm hiện có</span>
+          <h3>Natural Meal — Bữa ăn tinh bột kháng tự nhiên</h3>
+          <p class="desc">Thức uống bột hoà tan từ chuối xanh, đậu gà, muối hồng và nano curcumin. Tiện lợi cho bữa sáng, bữa phụ hay bất cứ khi nào cần một ly thức uống ấm nóng nhanh gọn.</p>
+          <div class="prod-specs">
+            <div><b>10 gói / hộp</b><span>200g (20g/gói)</span></div>
+            <div><b>Từ 6 tuổi</b><span>trở lên</span></div>
+          </div>
+          <div class="prod-actions">
+            <a class="btn btn-primary" href="#lien-he">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Liên hệ đặt hàng
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== BẢNG DINH DƯỠNG ===== -->
-  <section id="dinh-duong">
+  <!-- ===== GIÁ TRỊ DINH DƯỠNG ===== -->
+  <section class="nutri" id="dinh-duong">
     <div class="container nutri-grid">
+      <div class="nutri-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
+        <h3>Đang cập nhật</h3>
+        <p>Bảng giá trị dinh dưỡng chi tiết đang được hoàn thiện theo kết quả kiểm nghiệm và sẽ sớm được công bố tại đây.</p>
+      </div>
       <div>
         <span class="eyebrow">Giá trị dinh dưỡng</span>
-        <h2>Minh bạch từng con số</h2>
-        <p class="lead">Thông tin dinh dưỡng trung bình trong 1 khẩu phần 30g (3 muỗng canh) sản phẩm Ansora Original. Số liệu demo, sẽ được cập nhật theo kết quả kiểm nghiệm.</p>
-        <p class="note">* %NRV: Tỷ lệ phần trăm so với nhu cầu dinh dưỡng khuyến nghị hàng ngày cho người trưởng thành.</p>
-      </div>
-      <div>
-        <table>
-          <thead>
-            <tr><th>Thành phần</th><th>Mỗi 30g</th><th>%NRV*</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Năng lượng</td><td>120 kcal</td><td>6%</td></tr>
-            <tr><td>Protein</td><td>5,2 g</td><td>10%</td></tr>
-            <tr><td>Chất béo</td><td>3,1 g</td><td>4%</td></tr>
-            <tr><td>Carbohydrate</td><td>17 g</td><td>6%</td></tr>
-            <tr><td>Chất xơ</td><td>4,0 g</td><td>16%</td></tr>
-            <tr><td>Đường (tự nhiên)</td><td>2,1 g</td><td>–</td></tr>
-            <tr><td>Canxi</td><td>95 mg</td><td>12%</td></tr>
-            <tr><td>Sắt</td><td>1,8 mg</td><td>13%</td></tr>
-          </tbody>
-        </table>
+        <h2>Thông tin sẽ sớm được cập nhật</h2>
+        <p class="lead" style="margin:16px 0 0;">Trong lúc chờ số liệu kiểm nghiệm chính thức, đây là những gì đã được xác nhận về sản phẩm:</p>
+        <ul class="nutri-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Thành phần: bột chuối xanh, đậu gà, muối hồng, nano curcumin</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Khối lượng: 20g mỗi gói, 200g mỗi hộp (10 gói)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Xuất xứ Việt Nam, nguyên liệu thuần Việt</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ===== ĐÁNH GIÁ ===== -->
-  <section class="reviews" id="danh-gia">
+  <!-- ===== CAM KẾT ===== -->
+  <section class="trust" id="cam-ket">
     <div class="container">
       <div class="center">
-        <span class="eyebrow">Khách hàng nói gì</span>
-        <h2>Hơn 10.000 gia đình tin dùng</h2>
+        <span class="eyebrow">Cam kết</span>
+        <h2>Được nhiều gia đình Việt tin dùng</h2>
+        <p class="lead">ansora đồng hành cùng những giá trị rõ ràng, có thể kiểm chứng.</p>
       </div>
-      <div class="rev-grid">
-        <div class="rev">
-          <div class="stars">★★★★★</div>
-          <p>“Bé nhà mình 9 tuổi trước đây rất lười ăn sáng. Từ khi có Ansora Cacao thì sáng nào cũng tự pha uống. Mẹ yên tâm hơn nhiều.”</p>
-          <div class="who"><span class="av">👩</span><div>Chị Thu Hà<small>Hà Nội · Mẹ 2 bé</small></div></div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l10 5 10-5M2 7l10 5 10-5-10-5z"/></svg></div>
+          <h3>Xuất xứ Việt Nam</h3>
+          <p>Sản phẩm được sản xuất hoàn toàn tại Việt Nam.</p>
         </div>
-        <div class="rev">
-          <div class="stars">★★★★★</div>
-          <p>“Mình tập gym buổi sáng, uống một ly Ansora Original sau tập là đủ no đến trưa. Vị hạt rang thơm, không ngọt gắt.”</p>
-          <div class="who"><span class="av">🧔</span><div>Anh Minh Quân<small>TP. Hồ Chí Minh · Nhân viên văn phòng</small></div></div>
+        <div class="trust-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 5 10 5 14a7 7 0 0 0 14 0c0-4-3-8-7-12z"/></svg></div>
+          <h3>Nguyên liệu thuần Việt</h3>
+          <p>Chuối xanh, đậu gà và các nguyên liệu quen thuộc trong nước.</p>
         </div>
-        <div class="rev">
-          <div class="stars">★★★★★</div>
-          <p>“Ông bà nhà tôi dùng loại Zero, dễ tiêu, không lo đường huyết. Chữ trên bao bì to rõ, ông bà tự đọc được cách pha.”</p>
-          <div class="who"><span class="av">👨</span><div>Anh Đức Nam<small>Đà Nẵng · Mua cho bố mẹ</small></div></div>
+        <div class="trust-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+          <h3>Đơn vị sản xuất uy tín</h3>
+          <p>Sản xuất bởi Công ty TNHH Thực phẩm Green Delights.</p>
+        </div>
+        <div class="trust-card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>Phân phối bởi ansora</h3>
+          <p>Công ty TNHH ansora — thương nhân phân phối độc quyền.</p>
         </div>
       </div>
     </div>
@@ -641,39 +553,53 @@
       </div>
       <div class="faq">
         <details open>
-          <summary>Trẻ dưới 8 tuổi có dùng được không?</summary>
-          <p>Sản phẩm được thiết kế cho trẻ từ 8 tuổi trở lên và người lớn. Với trẻ nhỏ hơn, phụ huynh nên tham khảo ý kiến bác sĩ dinh dưỡng trước khi sử dụng.</p>
+          <summary>Sản phẩm phù hợp với ai?<span class="plus">+</span></summary>
+          <p>Sản phẩm phù hợp cho người từ 6 tuổi trở lên, dùng được cho cả gia đình.</p>
         </details>
         <details>
-          <summary>Mỗi ngày nên dùng bao nhiêu?</summary>
-          <p>Khuyến nghị 1–2 khẩu phần mỗi ngày, mỗi khẩu phần 30g (3 muỗng canh). Có thể dùng thay bữa sáng hoặc làm bữa phụ giữa buổi.</p>
+          <summary>Cách pha như thế nào?<span class="plus">+</span></summary>
+          <p>Pha 1 gói (tương đương 20g) với 150ml nước nóng 60–70°C, khuấy đều đến khi sản phẩm tan hoàn toàn.</p>
         </details>
         <details>
-          <summary>Sản phẩm có chứa gluten không?</summary>
-          <p>Yến mạch trong sản phẩm có thể chứa một lượng nhỏ gluten do quá trình canh tác và chế biến. Người dị ứng gluten nên cân nhắc trước khi dùng.</p>
+          <summary>Ai không nên dùng sản phẩm?<span class="plus">+</span></summary>
+          <p>Không dùng cho người dị ứng với bất kỳ thành phần nào của sản phẩm. Vì pha bằng nước nóng, cần tránh xa tầm tay trẻ em trong lúc pha chế.</p>
         </details>
         <details>
-          <summary>Bảo quản như thế nào, dùng trong bao lâu?</summary>
-          <p>Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng. Sau khi mở túi, đóng kín miệng túi và dùng trong 30 ngày. Hạn sử dụng 12 tháng từ ngày sản xuất.</p>
+          <summary>Bảo quản sản phẩm như thế nào?<span class="plus">+</span></summary>
+          <p>Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</p>
         </details>
         <details>
-          <summary>Có giao hàng toàn quốc không?</summary>
-          <p>Có. Ansora giao hàng toàn quốc trong 2–4 ngày làm việc, miễn phí vận chuyển cho đơn từ 2 túi.</p>
+          <summary>Sản phẩm có nguồn gốc từ đâu?<span class="plus">+</span></summary>
+          <p>Sản phẩm được sản xuất tại Việt Nam từ nguyên liệu thuần Việt. Đơn vị chịu trách nhiệm sản xuất: Công ty TNHH Thực phẩm Green Delights. Phân phối độc quyền bởi Công ty TNHH ansora.</p>
+        </details>
+        <details>
+          <summary>Làm sao để đặt hàng?<span class="plus">+</span></summary>
+          <p>Vui lòng liên hệ hotline 0967 868 747 hoặc email ansora.co.ltd@gmail.com để được tư vấn và đặt hàng.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="cta-section" id="dat-hang">
+  <!-- ===== CTA LIÊN HỆ ===== -->
+  <section class="cta-section" id="lien-he">
     <div class="container">
       <div class="cta">
-        <h2>Bắt đầu bữa sáng lành mạnh ngay hôm nay</h2>
-        <p>Để lại số điện thoại, Ansora sẽ gọi lại tư vấn và gửi ưu đãi <strong>giảm 15%</strong> cho đơn hàng đầu tiên.</p>
-        <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đây là bản demo, chức năng gửi sẽ được kết nối sau.');">
-          <input type="tel" placeholder="Số điện thoại của bạn" required>
-          <button class="btn btn-primary" type="submit">Nhận ưu đãi 15% →</button>
-        </form>
+        <h2>Hãy liên lạc với chúng tôi</h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">ansora luôn sẵn sàng tư vấn và hỗ trợ bạn đặt hàng nhanh chóng.</p>
+        <div class="contact-row">
+          <a class="contact-pill" href="tel:0967868747">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span class="txt"><small>Gọi hotline</small><b>0967 868 747</b></span>
+          </a>
+          <a class="contact-pill zalo" href="https://zalo.me/0967868747">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-11.78 7.83L3 21l1.67-6.22A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+            <span class="txt"><small>Nhắn tin</small><b>Zalo ansora</b></span>
+          </a>
+          <a class="contact-pill" href="mailto:ansora.co.ltd@gmail.com">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <span class="txt"><small>Email</small><b>ansora.co.ltd@gmail.com</b></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -683,35 +609,31 @@
     <div class="container">
       <div class="foot-grid">
         <div>
-          <div class="logo"><span class="dot">🌾</span>Ansora</div>
-          <p>Bột ngũ cốc dinh dưỡng từ hạt hữu cơ. Sạch – Ngon – Đủ chất cho cả gia đình từ 8 tuổi.</p>
+          <div class="foot-logo"><img src="assets/images/ansora-logo.svg" alt="ansora"></div>
+          <p>Bữa ăn tinh bột kháng tự nhiên — thức uống bột hoà tan tiện lợi từ nguyên liệu thuần Việt.</p>
         </div>
         <div>
           <h4>Sản phẩm</h4>
-          <ul>
-            <li><a href="#san-pham">Ansora Original</a></li>
-            <li><a href="#san-pham">Ansora Cacao</a></li>
-            <li><a href="#san-pham">Ansora Zero</a></li>
-          </ul>
+          <ul><li><a href="#san-pham">Bữa ăn tinh bột kháng tự nhiên</a></li></ul>
         </div>
         <div>
           <h4>Thông tin</h4>
           <ul>
             <li><a href="#thanh-phan">Thành phần</a></li>
-            <li><a href="#dinh-duong">Giá trị dinh dưỡng</a></li>
+            <li><a href="#cach-dung">Cách dùng</a></li>
             <li><a href="#faq">Câu hỏi thường gặp</a></li>
           </ul>
         </div>
         <div>
           <h4>Liên hệ</h4>
           <ul>
-            <li>📞 1900 0000 (demo)</li>
-            <li>✉️ hello@ansora.vn</li>
-            <li>📍 Hà Nội, Việt Nam</li>
+            <li class="foot-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:0967868747">0967 868 747</a></li>
+            <li class="foot-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:ansora.co.ltd@gmail.com">ansora.co.ltd@gmail.com</a></li>
+            <li class="foot-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Số 4, ngách 21 ngõ 17 đường Đại Đồng, Thôn Đại Đồng 2, Xã Thạch Thất, TP. Hà Nội</span></li>
           </ul>
         </div>
       </div>
-      <div class="copy">© 2026 Ansora. Bản demo giao diện – số liệu minh hoạ, chưa phải thông tin công bố chính thức.</div>
+      <div class="copy">© 2026 Công ty TNHH ansora. Một số nội dung (giá trị dinh dưỡng) đang được hoàn thiện và sẽ sớm cập nhật.</div>
     </div>
   </footer>
 
